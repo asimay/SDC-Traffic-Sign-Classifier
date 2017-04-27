@@ -51,7 +51,7 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-####2. The exploratory visualization of the dataset:
+#### 2. The exploratory visualization of the dataset:
 
 The code for this step is contained in the third and fourth code cell of the IPython notebook.  
 
@@ -128,6 +128,7 @@ batch size is :128
 number of epochs: 20, but it can stop till it check the validation accuracy meet the requirement.
 
 hyperparameters:
+
     mu = 0
     sigma = 0.1
     learning_rate = 0.001
@@ -146,21 +147,35 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-==> LeNet-5 architecture is the first choose.
+
+  ==> LeNet-5 architecture is the first choose.
+
 * What were some problems with the initial architecture?
-==> Filter Depth is not enough.
+
+  ==> Filter Depth is not enough.
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-==> Add dropout layer.
+
+  ==> Add dropout layer.
+
 * Which parameters were tuned? How were they adjusted and why?
-==> Filter Depth is tuned.
+
+  ==> Filter Depth is tuned.
+
 
 If a well known architecture was chosen:
 * What architecture was chosen?
-==> LeNet-5 architecture
+
+  ==> LeNet-5 architecture
+
 * Why did you believe it would be relevant to the traffic sign application?
-==> it has similar characteristics with MNIST.
+
+  ==> it has similar characteristics with MNIST.
+
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-==> We need to test the Module to prove the model is good, and test result is 
+
+  ==> We need to test the Module to prove the model is good, and test result is 
+
 
 ### Test a Model on New Images
 
