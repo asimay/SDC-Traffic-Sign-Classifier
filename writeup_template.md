@@ -117,37 +117,54 @@ My final model consisted of the following layers:
  
 
 
-#### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 4. trained model:
 
-The code for training the model is located in the eigth cell of the ipython notebook. 
+The code for training the model is located in the cell of "Train, Validate and Test the Model" of the ipython notebook. 
 
-To train the model, I used an ....
+To train the model, I used "AdamOptimizer" and "evaluate" function to optimize and evaluate the result.
 
-####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+batch size is :128
 
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+number of epochs: 20, but it can stop till it check the validation accuracy meet the requirement.
+
+hyperparameters:
+    mu = 0
+    sigma = 0.1
+    learning_rate = 0.001
+    drop_out = 0.3
+    max_acc = 0.0
+    THRESHOLD = 0.95
+
+#### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+
+The code for calculating the accuracy of the model is located in cell of "Train, Validate and Test the Model" of the Ipython notebook.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
+* training set accuracy of 99.6%
+* validation set accuracy of 96% 
 * test set accuracy of ?
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+==> LeNet-5 architecture is the first choose.
 * What were some problems with the initial architecture?
+==> Filter Depth is not enough.
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+==> Add dropout layer.
 * Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+==> Filter Depth is tuned.
 
 If a well known architecture was chosen:
 * What architecture was chosen?
+==> LeNet-5 architecture
 * Why did you believe it would be relevant to the traffic sign application?
+==> it has similar characteristics with MNIST.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+==> We need to test the Module to prove the model is good, and test result is 
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
