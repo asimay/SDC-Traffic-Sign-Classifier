@@ -80,9 +80,13 @@ As a last step, I normalized the image data because this can reduce the impact o
 
 #### 2. set up training, validation and testing data:
 
-The code for separating the data into training and validation sets is contained in the first code cell of the IPython notebook.  
+Extract the training, validation, testing data from the zip file, and load into corresponding data set.
 
-My final training set had **34799** number of images. My validation set and test set had 4410 and 12630 number of images.
+The code is contained in the first code cell of the IPython notebook.  
+
+My final training set had **34799** number of images. 
+
+My validation set and test set had **4410** and **12630** number of images.
 
 The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
 
