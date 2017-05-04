@@ -28,7 +28,7 @@ The goals / steps of this project are the following:
 [image6]: ./testImages/img3.png "Traffic Sign 3"
 [image7]: ./testImages/img4.png "Traffic Sign 4"
 [image8]: ./testImages/img5.png "Traffic Sign 5"
-[image9]: ./testImages/img9.png "Traffic Sign 6"
+[image9]: ./testImages/img6.png "Traffic Sign 6"
 [image10]: ./examples/LeNet-arch.jpg "LeNet-arch.jpg"
 [image11]: ./examples/compare.png "compare"
 [image12]: ./examples/guess.png "guess"
@@ -238,13 +238,20 @@ the predict shows:
 ![alt guess][image12]
 
 The top five predictions for the last sign are: 
+
 Class 30 with 31.78%
+
 Class 23 with 28.31%
+
 Class 34 with 24.43%
+
 Class 20 with 4.73%
+
 Class 28 with 4.24%
+
 
 The correct class would have been class 3, speed limit (60 km/h). It seems that the very blurriness of the pic confused the network. This is acceptable. Using clearly and recognizable traffic sign images from internet should improve this situation.
 
 the output Top 5 Softmax Probabilities For Each Image is as below:
+
 ![alt guess][image13]
