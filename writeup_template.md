@@ -250,8 +250,11 @@ Class 20 with 4.73%
 Class 28 with 4.24%
 
 
-The correct class would have been class 3, speed limit (60 km/h). It seems that the very blurriness of the pic confused the network. This is acceptable. Using clearly and recognizable traffic sign images from internet should improve this situation.
 
 the output Top 5 Softmax Probabilities For Each Image is as below:
 
 ![alt guess][image13]
+
+
+The correct class would have been class 3, speed limit (60 km/h). It seems that the very blurriness of the pic confused the network. This is acceptable. Using clearly and recognizable traffic sign images from internet should improve this situation.
+Thank you.
