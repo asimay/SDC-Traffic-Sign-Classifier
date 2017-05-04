@@ -28,6 +28,11 @@ The goals / steps of this project are the following:
 [image6]: ./testImages/img3.png "Traffic Sign 3"
 [image7]: ./testImages/img4.png "Traffic Sign 4"
 [image8]: ./testImages/img5.png "Traffic Sign 5"
+[image9]: ./testImages/img9.png "Traffic Sign 6"
+[image10]: ./examples/LeNet-arch.jpg "LeNet-arch.jpg"
+[image11]: ./examples/compare.png "compare"
+[image12]: ./examples/guess.png "guess"
+[image13]: ./examples/softmax.png "softmax"
 
 ## Rubric Points
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -88,7 +93,9 @@ The code is contained in the first code cell of the IPython notebook.
 
 My final training set had **40000** number of images. 
 
-My validation set and test set had **8000 (original is 4410)** and **12630** number of images.
+My validation set had **8000 (original is 4410, 8000 is 20% of training data)**, 
+
+my test data had **12630** number of images.
 
 The code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because to avoid under-fitting. To add more data to the the data set, I used the following techniques : 
 
@@ -100,6 +107,8 @@ The difference between the original data set and the augmented data set is : aug
 
 
 #### 3. final model architecture (including model type, layers, layer sizes, connectivity, etc.) looks like : 
+
+![lenet][image10]
 
 The code for my final model is located in the Model Architecture cell of the ipython notebook. 
 
@@ -121,6 +130,25 @@ My final model consisted of the following layers:
 |						|												|
 |						|												|
  
+My model is an improved version of the LeNet-5 architecture, containing more layers as well as weights and biases to allow a better fitting to the data:
+
+Input image: 32x32x1 (grayscale + normalization +  augmented dataset)
+
+Layer 1: 1st Convolutional with dropout. Input = 32x32x1. Output = 28x28x32
+
+Layer 2: 2nd Convolutional with max-pool and dropout. Output = 14x14x32
+
+Layer 3: 3rd Convolutional with max-pool and dropout. Output = 10x10x64
+
+Flatten
+
+Layer 4: Fully Connected with Dropout. Input = 1600. Output = 1000
+
+Layer 5: Fully Connected with Dropout. Input = 1000. Output = 500
+
+Layer 6: Fully Connected. Input = 500. Output = 43
+
+Output: 43 values, containing the probability that the image belongs to class x
 
 
 #### 4. trained model:
@@ -187,42 +215,36 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+==> Here are 6 German traffic signs that I found on the web:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image7] ![alt text][image8] ![alt text][image9]
 
+The last images is very blurriness, so it is interesting to see how the network deals with those images.
+For general speaking, when image is too Blurriness or too Noisiness to recognize, it may be difficult to classify, besides that,
+poor quality of the images and poor contrast with the background can also be difficult to classify.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
+==> The test accuracy on the new test data is 83.33%, while it was 93.80% on the previous test data set. This is very comparable, so no underfit or overfit is estimated.
 
-Here are the results of the prediction:
+![alt text][image11]
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+The model was able to correctly guess 5 of the 6 traffic signs. which gives an accuracy of 83.3%.  It failed to classify the 60 km/h speed limit sign, because that one is very blurriness.
 
+For all test images except for the last one, the network is really certain about its answer. The last one was indeed classified wrong, so it makes sense that the certainty is not so high here.
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+the predict shows:
+![alt guess][image12]
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The top five predictions for the last sign are: 
+Class 30 with 31.78%
+Class 23 with 28.31%
+Class 34 with 24.43%
+Class 20 with 4.73%
+Class 28 with 4.24%
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The correct class would have been class 3, speed limit (60 km/h). It seems that the very blurriness of the pic confused the network. This is acceptable. Using clearly and recognizable traffic sign images from internet should improve this situation.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+the output Top 5 Softmax Probabilities For Each Image is as below:
+![alt guess][image13]
