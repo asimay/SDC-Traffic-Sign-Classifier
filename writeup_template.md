@@ -23,11 +23,11 @@ The goals / steps of this project are the following:
 [image2_2]: ./examples/gray2.png  "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image3_3]: ./examples/adddata.png "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./testImages/img1.png "Traffic Sign 1"
+[image5]: ./testImages/img2.png "Traffic Sign 2"
+[image6]: ./testImages/img3.png "Traffic Sign 3"
+[image7]: ./testImages/img4.png "Traffic Sign 4"
+[image8]: ./testImages/img5.png "Traffic Sign 5"
 
 ## Rubric Points
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -192,7 +192,6 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
