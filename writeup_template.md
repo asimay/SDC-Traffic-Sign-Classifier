@@ -20,7 +20,9 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization1.png "Visualization 1"
 [image1_1]: ./examples/visualization2.PNG "Visualization 2"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
+[image2_2]: ./examples/gray2.png  "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
+[image3_3]: ./examples/adddata.png "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -46,7 +48,7 @@ The code for this step is contained in the first code cell of the IPython notebo
 I used the python library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is 34799 
+* The size of training set is 40000（original is 34799) 
 * The size of test set is 12630 
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
@@ -74,7 +76,7 @@ As a first step, I decided to convert the images to grayscale because the result
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![gray_scale][image2_2]
 
 As a last step, I normalized the image data because this can reduce the impact of too big weight image.
 
@@ -84,17 +86,17 @@ Extract the training, validation, testing data from the zip file, and load into 
 
 The code is contained in the first code cell of the IPython notebook.  
 
-My final training set had **34799** number of images. 
+My final training set had **40000** number of images. 
 
-My validation set and test set had **4410** and **12630** number of images.
+My validation set and test set had **8000 (original is 4410)** and **12630** number of images.
 
-The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
+The code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because to avoid under-fitting. To add more data to the the data set, I used the following techniques : 
 
 Here is an example of an original image and an augmented image:
 
-![original image and an augmented image][image3]
+![original image and an augmented image][image3_3]
 
-The difference between the original data set and the augmented data set is the following ... 
+The difference between the original data set and the augmented data set is : augmented data add some Gaussian noise in original image. 
 
 
 #### 3. final model architecture (including model type, layers, layer sizes, connectivity, etc.) looks like : 
@@ -144,10 +146,10 @@ hyperparameters:
 
 The code for calculating the accuracy of the model is located in cell of "Train, Validate and Test the Model" of the Ipython notebook.
 
-My final model results were:
-* training set accuracy of 99.6%
-* validation set accuracy of 96% 
-* test set accuracy of ?
+After 5 Epochs My final model results were:
+* training set accuracy of 87.8%
+* validation set accuracy of 95.2% 
+* test set accuracy of 93.8%
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -178,7 +180,7 @@ If a well known architecture was chosen:
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
-  ==> We need to test the Module to prove the model is good, and test result is 
+  ==> We need to test the Module to prove the model is good, and test result is 93.8%.
 
 
 ### Test a Model on New Images
